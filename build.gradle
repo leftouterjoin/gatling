@@ -25,7 +25,30 @@ project('quickstart') {
 		args = [
  	      		"--simulation", "computerdatabase.BasicSimulation",
        			"--results-folder", "${buildDir}/gatling-results",
-       			"--binaries-folder", sourceSets.test.output.classesDir.toString(), 
+       			"--binaries-folder", sourceSets.test.output.classesDir.toString(),
+			"--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
+		]
+    	}
+
+	task a01(type: JavaExec) {
+		classpath = sourceSets.test.runtimeClasspath
+		main = 'io.gatling.app.Gatling'
+		args = [
+ 	      		"--simulation", "computerdatabase.advanced.AdvancedSimulationStep01",
+       			"--results-folder", "${buildDir}/gatling-results",
+       			"--binaries-folder", sourceSets.test.output.classesDir.toString(),
+			"--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
+		]
+    	}
+
+	task a03(type: JavaExec) {
+		classpath = sourceSets.test.runtimeClasspath
+		main = 'io.gatling.app.Gatling'
+		args = [
+ 	      		"--simulation", "computerdatabase.advanced.AdvancedSimulationStep03",
+       			"--data-folder", "data",
+       			"--results-folder", "${buildDir}/gatling-results",
+       			"--binaries-folder", sourceSets.test.output.classesDir.toString(),
 			"--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
 		]
     	}
