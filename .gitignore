@@ -1,0 +1,15 @@
+_build
+.idea
+target
+.DS_Store
+.classpath
+.project
+.settings
+*-diff.txt
+*.zip
+Note.txt
+bin
+build
+.gradle
+.cache-tests
+
