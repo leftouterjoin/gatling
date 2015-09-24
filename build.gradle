@@ -21,6 +21,7 @@ project('quickstart') {
 
 	task loadtest(type: JavaExec) {
 		classpath = sourceSets.test.runtimeClasspath
+		systemProperties = ["enableGA": "false"]
 		main = 'io.gatling.app.Gatling'
 		args = [
  	      		"--simulation", "computerdatabase.BasicSimulation",
@@ -28,10 +29,11 @@ project('quickstart') {
        			"--binaries-folder", sourceSets.test.output.classesDir.toString(),
 			"--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
 		]
-    	}
+	}
 
 	task a01(type: JavaExec) {
 		classpath = sourceSets.test.runtimeClasspath
+		systemProperties = ["enableGA": "false"]
 		main = 'io.gatling.app.Gatling'
 		args = [
  	      		"--simulation", "computerdatabase.advanced.AdvancedSimulationStep01",
@@ -39,10 +41,11 @@ project('quickstart') {
        			"--binaries-folder", sourceSets.test.output.classesDir.toString(),
 			"--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
 		]
-    	}
+	}
 
 	task a03(type: JavaExec) {
 		classpath = sourceSets.test.runtimeClasspath
+		systemProperties = ["enableGA": "false"]
 		main = 'io.gatling.app.Gatling'
 		args = [
  	      		"--simulation", "computerdatabase.advanced.AdvancedSimulationStep03",
@@ -51,5 +54,31 @@ project('quickstart') {
        			"--binaries-folder", sourceSets.test.output.classesDir.toString(),
 			"--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
 		]
-    	}
+	}
+
+	task a04(type: JavaExec) {
+		classpath = sourceSets.test.runtimeClasspath
+		systemProperties = ["enableGA": "false"]
+		main = 'io.gatling.app.Gatling'
+		args = [
+ 	      		"--simulation", "computerdatabase.advanced.AdvancedSimulationStep04",
+       			"--data-folder", "data",
+       			"--results-folder", "${buildDir}/gatling-results",
+       			"--binaries-folder", sourceSets.test.output.classesDir.toString(),
+			"--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
+		]
+	}
+
+	task a05(type: JavaExec) {
+		classpath = sourceSets.test.runtimeClasspath
+		systemProperties = ["enableGA": "false"]
+		main = 'io.gatling.app.Gatling'
+		args = [
+ 	      		"--simulation", "computerdatabase.advanced.AdvancedSimulationStep05",
+       			"--data-folder", "data",
+       			"--results-folder", "${buildDir}/gatling-results",
+       			"--binaries-folder", sourceSets.test.output.classesDir.toString(),
+			"--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
+		]
+	}
 }

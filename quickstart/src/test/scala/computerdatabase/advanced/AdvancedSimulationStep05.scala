@@ -58,7 +58,7 @@ class AdvancedSimulationStep05 extends Simulation {
     }.exitHereIfFailed // if the chain didn't finally succeed, have the user exit the whole scenario
   }
 
-  val httpConf = http
+  val httpConf = http.proxy(Proxy("H1409106", 3128))
     .baseURL("http://computer-database.gatling.io")
     .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
     .doNotTrackHeader("1")

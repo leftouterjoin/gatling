@@ -57,7 +57,7 @@ class AdvancedSimulationStep01 extends Simulation {
         .formParam("company", "37"))
   }
 
-  val httpConf = http
+  val httpConf = http.proxy(Proxy("H1409106", 3128))
     .baseURL("http://computer-database.gatling.io")
     .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
     .doNotTrackHeader("1")
